@@ -1,0 +1,32 @@
+[
+    {
+        "Description": "Project Manager",
+        "role": "Manager",
+        "email": "luis.e.martinez@tamu.edu",
+        "Name": "Luis"
+    },
+    {
+        "Description":"Backend",
+        "role": "Manager",
+        "email":"annahuang5668@tamu.edu",
+        "Name": "Anna"
+    },
+    {
+        "Description":"Backend",
+        "role": "Server",
+        "email":"mathewa11@tamu.edu",
+        "Name": "Akhil"
+    },
+    {
+        "Description": "Fullstack",
+        "role": "Manager",
+        "email": "jliu103@tamu.edu",
+        "Name": "John"
+    },
+	{
+        "Description": "Frontend",
+        "role": "Manager",
+        "email": "eric27n@tamu.edu",
+        "Name": "Eric"
+    }
+]

@@ -1,0 +1,25 @@
+th { 
+    color: darkred;
+}
+
+/* .amongsus {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    color: darkred;
+} */
+
+table, th, td {
+    padding: 15px;
+    border: 1px solid;
+    text-align: center;
+    
+}
+
+tr:hover {background-color: coral;}
+
+.pabloemilioescobargaviria {
+    text-align: left;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
