@@ -6,7 +6,7 @@ const dotenv = require('dotenv').config();
 const cors = require('cors');
 // Create express app
 const app = express();
-const port = 6969;
+const port = process.env.PORT || 6969;
 // Create pool, allowing us to access the 
 const pool = new Pool({
     user: "csce331_905_john",
