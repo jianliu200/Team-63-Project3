@@ -23,7 +23,7 @@ const FoodUpdate = () =>{
     // }
     useEffect(() => {
         const getFood = async()=>{
-            await axios.get('http://localhost:6969/food').then((result)=>{
+            await axios.get('https://team63chickfila.onrender.com/food').then((result)=>{
                 console.log("It gets all of the columns")
                 console.log("This is the result: ", result)
                 setFoods(result.data)
@@ -37,7 +37,7 @@ const FoodUpdate = () =>{
 
     const update=async(theFoodId,theFoodItem,thePrice,theSupplies,theimage)=>{
         console.log("This is the data that is in my function: ",theFoodId,theFoodItem,thePrice,theSupplies,theimage)
-        await axios.post('http://localhost:6969/updatefood',{
+        await axios.post('https://team63chickfila.onrender.com/updatefood',{
             foodId: theFoodId,
             foodItem: theFoodItem,
             price: thePrice,
@@ -55,7 +55,7 @@ const FoodUpdate = () =>{
     }
     const addLeFood=async(counter,theFoodItem,thePrice,theSupplies,theimage)=>{
         console.log("This is data that is getting passed in: ",counter,theFoodItem,thePrice,theSupplies,theimage)
-        await axios.post('http://localhost:6969/insertfood',{
+        await axios.post('https://team63chickfila.onrender.com/insertfood',{
             foodId: counter,
             foodItem: theFoodItem,
             price:thePrice,

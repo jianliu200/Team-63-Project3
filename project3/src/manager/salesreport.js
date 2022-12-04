@@ -13,7 +13,7 @@ const Salesreport = () =>{
 
 
     const callApi = async (startdate,enddate) =>{
-        await axios.get(`http://localhost:6969/certainorder/${startdate}/${enddate}`).then((result) => {
+        await axios.get(`https://team63chickfila.onrender.com/certainorder/${startdate}/${enddate}`).then((result) => {
             console.log("It has succesfully got through the query")
             console.log(result.data)
             setTable(result.data)

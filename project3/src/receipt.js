@@ -19,7 +19,7 @@ const Receipt = () =>{
   //getting all the items in the food table to the listOfBts
   useEffect(() => {
     const callApi = async () =>{
-      await axios.get("http://localhost:6969/food").then((result) => {
+      await axios.get("https://team63chickfila.onrender.com/food").then((result) => {
         setListOfBits(result.data)
       });
     }
@@ -63,7 +63,7 @@ const Receipt = () =>{
 
   //This is the function call for us to push the order into the backend
   const pushOrder = (orderId, foodId, quantity, orderdate, amount) =>{
-    axios.post("http://localhost:6969/insertorder",{
+    axios.post("https://team63chickfila.onrender.com/insertorder",{
       orderId: orderId,
       foodId: foodId,
       quantity: quantity,
