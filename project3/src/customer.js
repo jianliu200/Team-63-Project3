@@ -39,7 +39,7 @@ function Customer() {
         <a href="/"><img src="/cfa-logo.png" width="50" height="50"></img></a>
         <div class="more-header">
           <a href="/App">Home</a>
-          <a href="https://chickfila63.onrender.com/googlemap" >Locations</a>
+          <a href="/googlemap" >Locations</a>
           <GoogleLogout clientId={clientId} 
             buttonText="Log out" onLogoutSuccess={logOut}
           />
@@ -51,8 +51,7 @@ function Customer() {
         <Route exact path = "/googlemap" element={<MapFront/>}/>
       </Routes>
       <div class="customer-body">
-          <h1>Welcome to Chick-Fil-A</h1>
-            <h1>This is the customer tab</h1>
+          <h1 class="intro">Welcome to Chick-Fil-A!</h1>
           <Receipt></Receipt>
       </div>
     </>

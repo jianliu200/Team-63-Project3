@@ -13,7 +13,7 @@ const Salesreport = () =>{
 
 
     const callApi = async (startdate,enddate) =>{
-        await axios.get(`https://team63chickfila.onrender.com/certainorder/${startdate}/${enddate}`).then((result) => {
+        await axios.get(`http://localhost:6969/certainorder/${startdate}/${enddate}`).then((result) => {
             console.log("It has succesfully got through the query")
             console.log(result.data)
             setTable(result.data)
@@ -47,28 +47,31 @@ const Salesreport = () =>{
     
         
           return(
-            <><table>
-                <thread class = "amongsus">
-                  <tr>
-                    <th>Order ID</th>
-                    <th>Food ID</th>
-                    <th>Quantity</th>
-                    <th>Order Date</th>
-                    <th>Amount</th>
-                  </tr>
-                </thread>
-                <tbody class = "pabloemilioescobargaviria">
-                  {tables.map((item) => (
-                    <tr>
-                      <td>{item.orderid}</td>
-                      <td>{item.foodid}</td>
-                      <td>{item.quantity}</td>
-                      <td>{item.orderdate}</td>
-                      <td>{item.amount}</td>
+            <>
+           
+              <table>
+                  
+                    <tr class="salesLabel">
+                      <th>Order ID</th>
+                      <th>Food ID</th>
+                      <th>Quantity</th>
+                      <th>Order Date</th>
+                      <th>Amount</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table></>
+                  
+                  <tbody class = "pabloemilioescobargaviria">
+                    {tables.map((item) => (
+                      <tr>
+                        <td>{item.orderid}</td>
+                        <td>{item.foodid}</td>
+                        <td>{item.quantity}</td>
+                        <td>{item.orderdate}</td>
+                        <td>{item.amount}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
           )
         
       }
@@ -85,15 +88,21 @@ const Salesreport = () =>{
         <div>
             <body>
             
-            <h1>Sales Report</h1>
+            <h1 class="intro">Sales Report</h1>
             {/* <ul>
               <button><Link to = "/manager">Ordering System</Link></button>
               <button><Link to ="/manager/excessreport">Excess Report</Link></button>
             </ul> */}
             </body>
-            <input type="date" onChange={change1} value = {startdate}/>
-            <input type="date" onChange={change2} value = {enddate}/>
-            <button onClick = {()=>{finalResult()}}>Submit</button>
+            <div class="dateHeader">
+              <h3 class="start">Start</h3>
+              <h3 class="end">End</h3>
+            </div>
+            <div>
+            <input type="date" onChange={change1} value = {startdate} class="startDate"/>
+            <input type="date" onChange={change2} value = {enddate} class="endDate"/>
+            <button onClick = {()=>finalResult()} class="reddy">Submit</button>
+            </div>
             {displayTable()}
         </div>
         </>

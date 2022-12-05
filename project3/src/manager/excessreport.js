@@ -13,7 +13,7 @@ const[excess,setExcess] = useState([])
 
 useEffect(() => {
     const getColumns = async()=>{
-        await axios.get('https://team63chickfila.onrender.com/column').then((result)=>{
+        await axios.get('http://localhost:6969/column').then((result)=>{
             // console.log("It gets all of the columns")
             setColumns(result.data)
         })
@@ -34,7 +34,7 @@ useEffect(() => {
 
   const callApiStart = async (startdate) =>{
     //Object.values(temp1[0])[0]
-    await axios.get(`https://team63chickfila.onrender.com/supplydatestart/${startdate}`).then((result) => {
+    await axios.get(`http://localhost:6969/supplydatestart/${startdate}`).then((result) => {
         const new_list = []
         //console.log("This is the data from the api start: ",result.data);
         for(var i = 1; i<Object.values(result.data[0]).length; ++i){
@@ -51,7 +51,7 @@ useEffect(() => {
 
 
 const callApiEnd = async (enddate) =>{ 
-    await axios.get(`https://team63chickfila.onrender.com/supplydateend/${enddate}`).then((result) => {
+    await axios.get(`http://localhost:6969/supplydateend/${enddate}`).then((result) => {
       
       const new_list = []
         //console.log("This is the data from the api end: ",result.data);
@@ -91,12 +91,12 @@ const displayTable = () => {
   
       return(
        
-        <><table>
-            <thread>
+        <><table id="excessTable">
+            {/* <thread> */}
               <tr>
                 <th>Food ID</th>
               </tr>
-            </thread>
+            {/* </thread> */}
             <tbody>
               {excess.map((item) => (
                 <tr>
@@ -131,17 +131,17 @@ return(
     </body>
     
     
-    <h1 class="intro">excess report</h1>
+    <h1 class="intro">Excess Report</h1>
     
-    
-    
-    <div class ="input">
-      <input type="date" onChange={change1} value = {startdate} min="2022-10-02" max="2022-12-31"/>
-      <input type="date" onChange={change2} value = {enddate} min="2022-10-02" max="2022-12-31"/>
-    </div>
-    {/* <div class="buttons"> */}
+      <div class="dateHeader">
+        <h3 class="start">Start</h3>
+        <h3 class="end">End</h3>
+      </div>
+      <div>
+      <input type="date" onChange={change1} value = {startdate} min="2022-10-02" max="2022-12-31" class="startDate"/>
+      <input type="date" onChange={change2} value = {enddate} min="2022-10-02" max="2022-12-31" class="endDate"/>
       <button onClick = {()=> finalResult()} class="reddy">Submit</button>
-    {/* </div> */}
+      </div>
     
     
     {displayTable()}

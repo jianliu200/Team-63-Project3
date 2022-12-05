@@ -37,10 +37,17 @@ a {
 	background: #EEEEEE;
 }
 
+.more-header a:current {
+	color: yellow;
+}
+
 .customer-body {
 	margin: 8px;
 }
 
+a:active {
+	background: blue;
+}
 .goog-logo-link {
 	display:none !important;
 } 
@@ -72,4 +79,9 @@ a {
 
 .login-text {
 	font-size: 25px;
+}
+
+.intro {
+	text-align: center;
+	font-size: 50px;
 }

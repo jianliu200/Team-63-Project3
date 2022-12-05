@@ -23,7 +23,7 @@ const FoodUpdate = () =>{
     // }
     useEffect(() => {
         const getFood = async()=>{
-            await axios.get('https://team63chickfila.onrender.com/food').then((result)=>{
+            await axios.get('http://localhost:6969/food').then((result)=>{
                 console.log("It gets all of the columns")
                 console.log("This is the result: ", result)
                 setFoods(result.data)
@@ -37,7 +37,7 @@ const FoodUpdate = () =>{
 
     const update=async(theFoodId,theFoodItem,thePrice,theSupplies,theimage)=>{
         console.log("This is the data that is in my function: ",theFoodId,theFoodItem,thePrice,theSupplies,theimage)
-        await axios.post('https://team63chickfila.onrender.com/updatefood',{
+        await axios.post('http://localhost:6969/updatefood',{
             foodId: theFoodId,
             foodItem: theFoodItem,
             price: thePrice,
@@ -55,7 +55,7 @@ const FoodUpdate = () =>{
     }
     const addLeFood=async(counter,theFoodItem,thePrice,theSupplies,theimage)=>{
         console.log("This is data that is getting passed in: ",counter,theFoodItem,thePrice,theSupplies,theimage)
-        await axios.post('https://team63chickfila.onrender.com/insertfood',{
+        await axios.post('http://localhost:6969/insertfood',{
             foodId: counter,
             foodItem: theFoodItem,
             price:thePrice,
@@ -94,7 +94,7 @@ const FoodUpdate = () =>{
         return(
             
             <><table>
-                <thread>
+                {/* <thread> */}
                   <tr>
                     <th>Food ID</th>
                     <th>Food Item</th>
@@ -102,7 +102,7 @@ const FoodUpdate = () =>{
                     <th>Supplies</th>
                     <th>Food Image</th>
                   </tr>
-                </thread>
+                {/* </thread> */}
                 <tbody>
                   {foods.map((item) => (
                     <tr>
@@ -128,7 +128,7 @@ const FoodUpdate = () =>{
     return(
         <><body>
            
-            <h1>This is the foodupdate tab</h1>
+            <h1 class="intro">Update Menu</h1>
             {/* <ul>
                 <button><Link to="/manager">Ordering System</Link></button>
                 <button><Link to="/manager/salesreport">Sales Report</Link></button>

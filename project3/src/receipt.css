@@ -95,3 +95,11 @@ body{
 	background-color: #306370;
 	cursor: pointer;
 }
+
+h3 {
+	text-align: center;
+}
+
+.receiptHeader {
+	font-size: 30px;
+}

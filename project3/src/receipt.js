@@ -15,19 +15,22 @@ const Receipt = () =>{
   var year = today.getFullYear();
 
   var orderdt = year + '-' + month + '-' + day;
+  console.log(orderdt)
   
   //getting all the items in the food table to the listOfBts
   useEffect(() => {
     const callApi = async () =>{
-      await axios.get("https://team63chickfila.onrender.com/food").then((result) => {
+      await axios.get("http://localhost:6969/food").then((result) => {
+        console.log(result.data)
         setListOfBits(result.data)
       });
     }
     callApi()
-  }, [])
+  }, [listOfBts])
 
   //This is for error checking
-  
+  console.log("Is this even working and that is the question?")
+  console.log(listOfBts);
  
   //when you add new item into the order receipt 
   const addItem = (item) => {
@@ -63,7 +66,7 @@ const Receipt = () =>{
 
   //This is the function call for us to push the order into the backend
   const pushOrder = (orderId, foodId, quantity, orderdate, amount) =>{
-    axios.post("https://team63chickfila.onrender.com/insertorder",{
+    axios.post("http://localhost:6969/insertorder",{
       orderId: orderId,
       foodId: foodId,
       quantity: quantity,
@@ -82,7 +85,7 @@ const Receipt = () =>{
   //This allows us to push everything into the order table in the data base and reset everything
   const ordering = () =>{
     for(var i = 0; i < message.length; ++i){
-
+      console.log(orderId,message[i].foodid,1,orderId,message[i].price);
       pushOrder(orderId,message[i].foodid,1,orderdt,message[i].price);
     
     }
@@ -95,11 +98,13 @@ const Receipt = () =>{
   //return the html of what we created
   return(
     <>
+    
       <div class="customer">
         <div class="menuButtons">
           {displayButtons()}
         </div>
         <div class="receipt">
+          <h3 class="receiptHeader">Receipt</h3>
           <h3>Your total Price is: <span translate="no">{price.toFixed(2)}</span></h3>
           {displayItems}
           <button onClick = {ordering} class="submit-order">Submit Order</button>

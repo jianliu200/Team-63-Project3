@@ -2,24 +2,75 @@ th {
     color: darkred;
 }
 
-/* .amongsus {
+.amongsus {
+    flex: in;
     text-align: center;
     text-transform: uppercase;
     padding-bottom: 5px;
     color: darkred;
-} */
+} 
 
-table, th, td {
-    padding: 15px;
-    border: 1px solid;
-    text-align: center;
-    
+tr:hover {
+    background-color: coral;
 }
-
-tr:hover {background-color: coral;}
 
 .pabloemilioescobargaviria {
     text-align: left;
     text-transform: uppercase;
     padding-bottom: 5px;
+}
+
+tr {
+    text-align: center;
+}
+
+.amongsus {
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    table-layout: fixed;
+    padding: 15px;
+    text-align: center;
+}
+
+.intro {
+	text-align: center;
+	font-size: 50px;
+}
+
+.reddy {
+	/* margin-right: 25%; */
+	background-color: #E51636; /* Green */
+	border: none;
+	color: white;
+	/* float: left; */
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 16px;
+}
+  
+th, td {
+    border: 1px solid black;
+    padding: 15px;
+    width: 20%;
+}
+
+.start {
+    float: left;
+	margin-left: 35px;
+}
+
+.end {
+	float: left;
+	margin-left: 65px;
+}
+
+.dateHeader {
+	display: inline-block;
 }

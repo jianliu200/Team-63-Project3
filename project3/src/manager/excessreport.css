@@ -12,11 +12,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 .intro {
 	text-align: center;
-	text-transform: uppercase;
-	padding-bottom: 5px;
-	color: #E51636;
-	
-	
+	font-size: 50px;
 }
 
 input {
@@ -27,6 +23,11 @@ input {
 	float: center;
 }
 
+#excessTable {
+	width: 50%;
+	margin-left: auto; 
+  	margin-right: auto
+}
 .reddy {
 	/* margin-right: 25%; */
 	background-color: #E51636; /* Green */
@@ -39,6 +40,28 @@ input {
 	text-transform: uppercase;
 	display: inline-block;
 	font-size: 16px;
+}
 
+th {
+	text-align: center;
+}
+
+.startDate, .endDate {
+    font-size: 15px;
+    height: 45px;
+}
+
+.start {
+    float: left;
+	margin-left: 35px;
+}
+
+.end {
+	float: left;
+	margin-left: 65px;
+}
+
+.dateHeader {
+	display: inline-block;
 }
 
