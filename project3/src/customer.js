@@ -39,7 +39,7 @@ function Customer() {
         <a href="/"><img src="/cfa-logo.png" width="50" height="50"></img></a>
         <div class="more-header">
           <a href="/App">Home</a>
-          <a href="/googlemap" >Locations</a>
+          <a href="https://chickfila63.onrender.com/googlemap" >Locations</a>
           <GoogleLogout clientId={clientId} 
             buttonText="Log out" onLogoutSuccess={logOut}
           />
