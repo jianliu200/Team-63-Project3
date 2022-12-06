@@ -57,12 +57,7 @@ function Manager() {
               />
             </div>
           </nav>
-          <Routes>
-          <Route exact path = "/manager" element = {<Manager/>}/>
-            <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
-            <Route exact path = "/manager/excessreport" element={<ExcessReport/>}/>
-            <Route exact path = "/manager/foodUpdate" element={<FoodUpdate/>}/>
-          </Routes>
+          
           <h1 class="intro">Manager</h1>
           <Receipt></Receipt>
       </body>

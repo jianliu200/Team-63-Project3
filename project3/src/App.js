@@ -8,6 +8,12 @@ import Server from './server';
 import roles from './roles.json';
 import './App.css';
 
+import Salesreport from './manager/salesreport';
+import ExcessReport from './manager/excessreport';
+import FoodUpdate from './manager/foodupdate';
+
+import MapFront from './googlemap/mapfrontend'
+
 function App (){
   
   const [ profile, setProfile ] = useState([]);
@@ -108,7 +114,14 @@ function App (){
   </div> */}
 
   <div id="btnManager" hidden="true">
+    <Routes>
+      <Route exact path = "/manager" element = {<Manager/>}/>
+      <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
+      <Route exact path = "/manager/excessreport" element={<ExcessReport/>}/>
+      <Route exact path = "/manager/foodUpdate" element={<FoodUpdate/>}/>
+    </Routes>
     <Manager/>
+
   </div>
 
   <div id="btnServer" hidden="true">
@@ -116,6 +129,10 @@ function App (){
   </div>
 
   <div id="btnCustomer" hidden="true">
+    <Routes>
+        <Route exact path = "/customer" element = {<Customer/>}/>
+        <Route exact path = "/googlemap" element={<MapFront/>}/>
+      </Routes>
     <Customer/>
   </div>
 </div>
