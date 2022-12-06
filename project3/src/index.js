@@ -8,21 +8,19 @@ import {BrowserRouter,HashRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HashRouter>
-    {/* <Auth0Provider
-      domain='dev-3smdolrlurwlim0z.us.auth0.com'
-      clientId='EFiJ2eUBVY6Xnu32hQc5YOd4SisbTgit'
-      redirectUri={window.location.origin}
+    {/* <HashRouter> */}
     
-    > */}
       <App />
-    {/* </Auth0Provider> */}
-    </HashRouter>
+   
+    {/* </HashRouter> */}
   </React.StrictMode>
   
   , 
   // document.querySelector('#root')
-)/*"start": "react-scripts start"*/
+)
+
+
+/*"start": "react-scripts start"*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

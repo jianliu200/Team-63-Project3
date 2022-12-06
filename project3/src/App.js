@@ -113,13 +113,26 @@ function App (){
     />
   </div> */}
 
+  <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route exact path = "/manager" element = {<Manager/>}/>
+          <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
+          <Route exact path = "/manager/excessreport" element={<ExcessReport/>}/>
+          <Route exact path = "/manager/foodUpdate" element={<FoodUpdate/>}/>
+          <Route exact path = "/customer" element = {<Customer/>}/>
+          <Route exact path = "/googlemap" element={<MapFront/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
   <div id="btnManager" hidden="true">
-    <Routes>
+    {/* <Routes>
       <Route exact path = "/manager" element = {<Manager/>}/>
       <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
       <Route exact path = "/manager/excessreport" element={<ExcessReport/>}/>
       <Route exact path = "/manager/foodUpdate" element={<FoodUpdate/>}/>
-    </Routes>
+    </Routes> */}
     <Manager/>
 
   </div>
@@ -129,10 +142,10 @@ function App (){
   </div>
 
   <div id="btnCustomer" hidden="true">
-    <Routes>
+    {/* <Routes>
         <Route exact path = "/customer" element = {<Customer/>}/>
         <Route exact path = "/googlemap" element={<MapFront/>}/>
-      </Routes>
+      </Routes> */}
     <Customer/>
   </div>
 </div>
