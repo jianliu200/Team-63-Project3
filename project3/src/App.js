@@ -112,15 +112,17 @@ function App (){
     buttonText="Log out" onLogoutSuccess={logOut}
     />
   </div> */}
-  
-
-  <div id="btnManager" hidden="true">
-    {/* <Routes>
+  <Routes>
       <Route exact path = "/manager" element = {<Manager/>}/>
       <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
       <Route exact path = "/manager/excessreport" element={<ExcessReport/>}/>
       <Route exact path = "/manager/foodUpdate" element={<FoodUpdate/>}/>
-    </Routes> */}
+      <Route exact path = "/customer" element = {<Customer/>}/>
+      <Route exact path = "/googlemap" element={<MapFront/>}/>
+    </Routes> 
+  
+
+  <div id="btnManager" hidden="true">
     <Manager/>
 
   </div>
@@ -130,10 +132,7 @@ function App (){
   </div>
 
   <div id="btnCustomer" hidden="true">
-    {/* <Routes>
-        <Route exact path = "/customer" element = {<Customer/>}/>
-        <Route exact path = "/googlemap" element={<MapFront/>}/>
-      </Routes> */}
+    
     <Customer/>
   </div>
 </div>
