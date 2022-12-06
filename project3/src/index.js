@@ -8,7 +8,7 @@ import {BrowserRouter,HashRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
     {/* <Auth0Provider
       domain='dev-3smdolrlurwlim0z.us.auth0.com'
       clientId='EFiJ2eUBVY6Xnu32hQc5YOd4SisbTgit'
@@ -17,7 +17,7 @@ root.render(
     > */}
       <App />
     {/* </Auth0Provider> */}
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
   
   , 
