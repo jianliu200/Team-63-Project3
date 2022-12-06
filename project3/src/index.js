@@ -2,13 +2,13 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter,HashRouter} from 'react-router-dom';
 
 //rendering the front end
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
     {/* <Auth0Provider
       domain='dev-3smdolrlurwlim0z.us.auth0.com'
       clientId='EFiJ2eUBVY6Xnu32hQc5YOd4SisbTgit'
@@ -17,7 +17,7 @@ root.render(
     > */}
       <App />
     {/* </Auth0Provider> */}
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
   
   , 
