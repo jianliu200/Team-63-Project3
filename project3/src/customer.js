@@ -46,7 +46,10 @@ function Customer() {
         </div>
         
       </nav>
-      
+      <Routes>
+        <Route exact path = "/customer" element = {<Customer/>}/>
+        <Route exact path = "/googlemap" element={<MapFront/>}/>
+      </Routes>
       <div class="customer-body">
           <h1 class="intro">Welcome to Chick-Fil-A!</h1>
           <Receipt></Receipt>
