@@ -205,9 +205,12 @@ app.post("/newsupply",async(req,res)=>{
 });
 
 //This is going to be in the serve react build folder from express
-// app.get("*",async(req,res)=>{
-//     res.sendFile(path.join(path.dirname(path.basename(__dirname)), 'build', 'index.html'));
-// });
+app.use(express.static(path.join(path.dirname(path.basename(__dirname)), 'build')));
+console.log(path.dirname(path.basename(__dirname)));
+
+app.get("*",async(req,res)=>{
+    res.sendFile(path.join(path.dirname(path.basename(__dirname)), 'build', 'index.html'));
+});
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
