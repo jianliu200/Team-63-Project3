@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+body{
+	background: rgb(209, 202, 211);
+}
+
+.btn {
+	background-color: #4c9baf;
+	border: none;
+	color: white;
+	/*padding: 50px 32px;*/
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px;
+	height: 150px;
+	width: 210px;
+	transition-duration: 0.5s;
+}
+
+.btn:hover {
+	background-color: #306370;
+	cursor: pointer;
+}
+
+.menuButtons {
+	float: left;
+	width: 1250px;
+}
+
+.receipt {
+	float: right;
+	background-color: rgb(126,94,96);
+	color: white;
+	width: 300px;
+	padding: 20px;
+	justify-content: center;
+}
+
+.customer {
+	display: flex;
+	justify-content: center;
+}
+
+.submit-order {
+	background-color: red;
+	width: 150px;
+	height: 60px;
+	font-weight: 900;
+	color: white;
+	font-size: 17px;
+	transition-duration: 0.5s;
+}
+
+.submit-order:hover {
+	background-color: #800000;
+	cursor: pointer;
+}
+
+.swtich-view {
+	display: inline-flex;
+	justify-content: right;
+}
+
+.navbar-list {
+	list-style: none;
+	display: flex;
+	justify-content: left;
+	align-items: left;
+	padding: 0;
+	text-align: center;
+}
+
+.navbar-btn {
+	background-color: #4c9baf;
+	border: none;
+	color: white;
+	padding: 30px 30px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px;
+	height: 10px;
+	width: 150px;
+	transition-duration: 0.5s;
+}
+
+.navbar-btn:hover {
+	background-color: #306370;
+	cursor: pointer;
+}
+
+h3, .receipt {
+	text-align: center;
+}
+
+.receiptHeader {
+	font-size: 30px;
+}
