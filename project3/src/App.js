@@ -95,7 +95,7 @@ function App (){
             </p>
           </div>
         
-          <div id="btnGoogleLogin">
+          {/* <div id="btnGoogleLogin">
             <GoogleLogin      
                 clientId={clientId}
                 buttonText="Sign in"
@@ -104,7 +104,7 @@ function App (){
                 cookiePolicy={'single_host_origin'}
                 isSignedIn={true}
             />
-          </div>
+          </div> */}
         </div>
 
   {/* <div id="btnGoogleLogout" hidden="true">
@@ -114,7 +114,7 @@ function App (){
   </div> */}
   
 
-  <div id="btnManager" hidden="true">
+  <div id="btnManager" hidden="false">
     {/* <Routes>
       <Route exact path = "/manager" element = {<Manager/>}/>
       <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
