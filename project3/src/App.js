@@ -94,7 +94,7 @@ function App (){
               <h1>Chick-Fil-A Login</h1>
             </p>
           </div>
-        
+          
           {/* <div id="btnGoogleLogin">
             <GoogleLogin      
                 clientId={clientId}
@@ -105,6 +105,7 @@ function App (){
                 isSignedIn={true}
             />
           </div> */}
+          <Manager/>
         </div>
 
   {/* <div id="btnGoogleLogout" hidden="true">
@@ -114,7 +115,7 @@ function App (){
   </div> */}
   
 
-  <div id="btnManager" hidden="false">
+  <div id="btnManager" hidden="true">
     {/* <Routes>
       <Route exact path = "/manager" element = {<Manager/>}/>
       <Route exact path = "/manager/salesreport" element = {<Salesreport/>}/>
