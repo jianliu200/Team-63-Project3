@@ -94,8 +94,8 @@ function App (){
               <h1>Chick-Fil-A Login</h1>
             </p>
           </div>
-        
-          <div id="btnGoogleLogin">
+          
+          {/* <div id="btnGoogleLogin">
             <GoogleLogin      
                 clientId={clientId}
                 buttonText="Sign in"
@@ -104,7 +104,8 @@ function App (){
                 cookiePolicy={'single_host_origin'}
                 isSignedIn={true}
             />
-          </div>
+          </div> */}
+          <Manager/>
         </div>
 
   {/* <div id="btnGoogleLogout" hidden="true">
