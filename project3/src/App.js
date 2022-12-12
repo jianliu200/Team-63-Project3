@@ -111,7 +111,6 @@ function App (){
                 isSignedIn={true}
             />
           </div>
-          <Manager/>
         </div>
         
 
