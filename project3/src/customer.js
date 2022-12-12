@@ -10,8 +10,16 @@ import { gapi } from 'gapi-script';
 
 
 //import LogIn from './OAuth/oafront.js'
-
+/**
+ * handles customer page, showing the ordering system and google maps
+ *
+ * @version 1.0.1
+ * @author Anna Huang
+ * @author John Liu
+ * @author Akhil Mathew
+ */
 function Customer() {
+  // Code for Google Oauth
   const [ profile, setProfile ] = useState([]);
   const clientId = '7130970063-8l4ukqnaa0o24aiklhbbb8vbo8rpos8a.apps.googleusercontent.com';
   useEffect(() => {
@@ -22,6 +30,7 @@ function Customer() {
       });
     };
   }, [])
+  // Logging out from the customer side
     const logOut = () => {
         setProfile(null);
         document.getElementById("btnCustomer").hidden=true;
@@ -33,6 +42,7 @@ function Customer() {
         document.getElementById("btnServer").hidden=true;
         
       };
+  // Return the HTML code for the customer (Google OAuth, Navigation, Customer)
   return (
     <>
       <nav class="navigation">

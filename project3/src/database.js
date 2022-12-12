@@ -6,7 +6,7 @@ const dotenv = require('dotenv').config();
 const cors = require('cors');
 // Create express app
 const app = express();
-const port = process.env.PORT || 6969;
+const port = 6969;
 // Create pool, allowing us to access the 
 const pool = new Pool({
     user: "csce331_905_john",
@@ -205,9 +205,6 @@ app.post("/newsupply",async(req,res)=>{
 });
 
 //This is going to be in the serve react build folder from express
-// app.use(express.static(path.join(path.dirname(path.basename(__dirname)), 'build')));
-// console.log(path.dirname(path.basename(__dirname)));
-
 // app.get("*",async(req,res)=>{
 //     res.sendFile(path.join(path.dirname(path.basename(__dirname)), 'build', 'index.html'));
 // });

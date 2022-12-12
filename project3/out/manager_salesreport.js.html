@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: manager/salesreport.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: manager/salesreport.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axios from 'axios';
+import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom';
+import Manager from '../manager';
+import './saleReport.css';
+
+/**
+ * This is the JavaScript file responsible for the sales report from the manager. 
+ * This is the same functionality that we implemented in project 2.
+ * 
+ * @author John Liu
+ * @author Luis Martinez Morales
+ * @author Akhil Mathew
+ * @author Anna Huang
+ */
+const Salesreport = () =>{
+    // Variables in constant use throughout program
+    const [startdate,setStartDate] = useState('2022-10-03');
+    const [enddate, setEndDate] = useState('2022-10-04');
+    console.log(startdate)
+    console.log(enddate)
+    const [tables, setTable] = useState([])
+
+    // Call API to get table from database
+    const callApi = async (startdate,enddate) =>{
+        await axios.get(`http://localhost:6969/certainorder/${startdate}/${enddate}`).then((result) => {
+            console.log("It has succesfully got through the query")
+            console.log(result.data)
+            setTable(result.data)
+        });
+    }
+      
+    // Change start date
+      const change1 = event =>{
+        setStartDate(event.target.value)
+        console.log(startdate)
+      }
+
+      // Change end date
+      const change2 = event =>{
+        setEndDate(event.target.value)
+        console.log(enddate)
+               
+      }
+
+      // Return HTML code for the sales report TABLE
+      const displayTable = () => {
+        // getAllvalue()
+        // callApi()
+        // if(tables.length === 0){
+        //   return &lt;div>
+        //     &lt;h1>Welcome to Chick-Fil-A&lt;/h1>
+        //     &lt;h1>This is the manager tab&lt;/h1>
+        //   &lt;img src="/chick.png" />
+        //   &lt;ul>  
+        //     &lt;button>&lt;Link to = "/manager">Ordering System&lt;/Link>&lt;/button>
+        //   &lt;/ul>
+        //   &lt;/div>
+        // }
+    
+        
+          return(
+            &lt;>
+           
+              &lt;table>
+                  
+                    &lt;tr class="salesLabel">
+                      &lt;th>Order ID&lt;/th>
+                      &lt;th>Food ID&lt;/th>
+                      &lt;th>Quantity&lt;/th>
+                      &lt;th>Order Date&lt;/th>
+                      &lt;th>Amount&lt;/th>
+                    &lt;/tr>
+                  
+                  &lt;tbody class = "pabloemilioescobargaviria">
+                    {tables.map((item) => (
+                      &lt;tr>
+                        &lt;td>{item.orderid}&lt;/td>
+                        &lt;td>{item.foodid}&lt;/td>
+                        &lt;td>{item.quantity}&lt;/td>
+                        &lt;td>{item.orderdate}&lt;/td>
+                        &lt;td>{item.amount}&lt;/td>
+                      &lt;/tr>
+                    ))}
+                  &lt;/tbody>
+                &lt;/table>
+              &lt;/>
+          )
+        
+      }
+
+      // Function that is used to call all functions when sales report wants to be generated
+      function finalResult(){
+        console.log("This is the start date: ",startdate)
+        console.log("This is the enddate: ",enddate)
+        if (startdate.localeCompare(enddate) > 0) {
+          alert("End date should be after start date");
+          return;
+        }
+        
+        callApi(startdate,enddate)
+        alert("Submitted!")
+      }
+
+      // Return HTML code for sales report webpage
+      return(&lt;>
+
+        &lt;div>
+            &lt;body>
+            
+            &lt;h1 class="intro">Sales Report&lt;/h1>
+            
+            {/* &lt;ul>
+              &lt;button>&lt;Link to = "/manager">Ordering System&lt;/Link>&lt;/button>
+              &lt;button>&lt;Link to ="/manager/excessreport">Excess Report&lt;/Link>&lt;/button>
+            &lt;/ul> */}
+            &lt;/body>
+            &lt;div class="dateHeader">
+              &lt;h3 class="start">Start&lt;/h3>
+              &lt;h3 class="end">End&lt;/h3>
+            &lt;/div>
+            &lt;div>
+            &lt;input type="date" onChange={change1} value = {startdate} min="2022-10-02" max="2022-12-31" class="startDate"/>
+            &lt;input type="date" onChange={change2} value = {enddate} min="2022-10-02" max="2022-12-31" class="endDate"/>
+            &lt;button onClick = {()=>finalResult()} class="reddy">Submit&lt;/button>
+            
+
+            &lt;/div>
+            {displayTable()}
+        &lt;/div>
+        &lt;/>
+      )
+  
+    
+}
+export default Salesreport;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Customer">Customer</a></li><li><a href="global.html#ExcessReport">ExcessReport</a></li><li><a href="global.html#FoodUpdate">FoodUpdate</a></li><li><a href="global.html#Manager">Manager</a></li><li><a href="global.html#Receipt">Receipt</a></li><li><a href="global.html#Salesreport">Salesreport</a></li><li><a href="global.html#Server">Server</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Dec 06 2022 22:58:16 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

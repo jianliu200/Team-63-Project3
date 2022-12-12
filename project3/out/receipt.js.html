@@ -1,4 +1,32 @@
-import axios from 'axios';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: receipt.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: receipt.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axios from 'axios';
 import React, {useEffect, useState} from 'react'
 import './receipt.css';
 
@@ -29,7 +57,7 @@ const Receipt = () =>{
   //getting all the items in the food table to the listOfBts
   useEffect(() => {
     const callApi = async () =>{
-      await axios.get("https://team63chickfila.onrender.com/food").then((result) => {
+      await axios.get("http://localhost:6969/food").then((result) => {
         // console.log(result.data)
         setListOfBits(result.data)
       });
@@ -55,10 +83,10 @@ const Receipt = () =>{
     const new_list = []
     let eliminated = false
     let price = 0
-    for (let i = 0; i < message.length; i++) {
+    for (let i = 0; i &lt; message.length; i++) {
       console.log(i,message[i].foodid,item.foodid)
       console.log()
-      if (message[i].foodid === item.foodid && eliminated === false) {
+      if (message[i].foodid === item.foodid &amp;&amp; eliminated === false) {
         console.log("YUH")
         eliminated = true
       } else {
@@ -75,29 +103,29 @@ const Receipt = () =>{
   //display to button 
   const displayButtons = () => {
     if(listOfBts.length === 0){
-      return <div></div>
+      return &lt;div>&lt;/div>
     }
     //map all the food item to create them into butons
     return listOfBts.map((button) => {
       return(
-        <button class="btn" onClick={() => addItem(button)}>
-          <div class={button.fooditem}>
-            <img src={button.foodimg} width="100" height="100"></img>
-            <p>{button.fooditem}</p>
-          </div>
-        </button>
+        &lt;button class="btn" onClick={() => addItem(button)}>
+          &lt;div class={button.fooditem}>
+            &lt;img src={button.foodimg} width="100" height="100">&lt;/img>
+            &lt;p>{button.fooditem}&lt;/p>
+          &lt;/div>
+        &lt;/button>
       )
     })
   }
 
   //show all the things that you ordered
   const displayItems = message.map(item => {
-      return <li key = {item.fooditem} onClick = {() => removeItem(item)}>{item.fooditem}: {item.price}</li>
+      return &lt;li key = {item.fooditem} onClick = {() => removeItem(item)}>{item.fooditem}: {item.price}&lt;/li>
   })
 
   //This is the function call for us to push the order into the backend
   const pushOrder = (orderId, foodId, quantity, orderdate, amount) =>{
-    axios.post("https://team63chickfila.onrender.com/insertorder",{
+    axios.post("http://localhost:6969/insertorder",{
       orderId: orderId,
       foodId: foodId,
       quantity: quantity,
@@ -115,7 +143,7 @@ const Receipt = () =>{
 
   //This allows us to push everything into the order table in the data base and reset everything
   const ordering = () =>{
-    for(var i = 0; i < message.length; ++i){
+    for(var i = 0; i &lt; message.length; ++i){
       console.log(orderId,message[i].foodid,1,orderId,message[i].price);
       pushOrder(orderId,message[i].foodid,1,orderdt,message[i].price);
     
@@ -128,20 +156,43 @@ const Receipt = () =>{
 
   //return the html of what we created
   return(
-    <>
+    &lt;>
     
-      <div class="customer">
-        <div class="menuButtons">
+      &lt;div class="customer">
+        &lt;div class="menuButtons">
           {displayButtons()}
-        </div>
-        <div class="receipt">
-          <h3 class="receiptHeader">Receipt</h3>
-          <h3>Your Total Price Is: <span translate="no">{price.toFixed(2)}</span></h3>
+        &lt;/div>
+        &lt;div class="receipt">
+          &lt;h3 class="receiptHeader">Receipt&lt;/h3>
+          &lt;h3>Your Total Price Is: &lt;span translate="no">{price.toFixed(2)}&lt;/span>&lt;/h3>
           {displayItems}
-          <button onClick = {ordering} class="submit-order">Submit Order</button>
-        </div>
-      </div>
-    </>
+          &lt;button onClick = {ordering} class="submit-order">Submit Order&lt;/button>
+        &lt;/div>
+      &lt;/div>
+    &lt;/>
   )
 }
 export default Receipt;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Customer">Customer</a></li><li><a href="global.html#ExcessReport">ExcessReport</a></li><li><a href="global.html#FoodUpdate">FoodUpdate</a></li><li><a href="global.html#Manager">Manager</a></li><li><a href="global.html#Receipt">Receipt</a></li><li><a href="global.html#Salesreport">Salesreport</a></li><li><a href="global.html#Server">Server</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Dec 06 2022 22:58:16 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

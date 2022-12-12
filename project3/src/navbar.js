@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
 
 function NavBar(){
+    // Code for Google OAuth
     const clientId = '7130970063-8l4ukqnaa0o24aiklhbbb8vbo8rpos8a.apps.googleusercontent.com';
+    // Hide buttons if user logs out
     const logOut = () => {
         setProfile(null);
         document.getElementById("loginControl").hidden=false;
@@ -14,6 +16,7 @@ function NavBar(){
         document.getElementById("btnServer").hidden=true;
         document.getElementById("btnCustomer").hidden=true;
       };
+    // Return HTML code for the navigation bar
     return(
         <nav class="navigation">
             <a href="/"><img src="/cfa-logo.png" width="50" height="50"></img></a>

@@ -1,7 +1,9 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 
+// Function that logs in a user using Google OAuth API
 function logIn(){
+	// If successful, assign roles based on Google OAuth API, and hide tabs based on roles
 	const onSuccess = (res) => {
     
 		setProfile(res.profileObj);
@@ -32,11 +34,12 @@ function logIn(){
 		document.getElementById("btnGoogleLogout").hidden=false;
 	  };
 	
-	
+	// If it fails to log in, report it to the console
 	  const onFailure = (err) => {
 		console.log('Login in failed', err);
 	  };
 
+	// Return HTML code for Google login/OAuth
 	  <div id="btnGoogleLogin">
             <GoogleLogin      
                 clientId={clientId}

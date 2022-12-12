@@ -1,4 +1,32 @@
-import axios from 'axios';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: manager/foodupdate.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: manager/foodupdate.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import axios from 'axios';
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom';
 
@@ -34,7 +62,7 @@ const FoodUpdate = () =>{
     // Use Axios to get food database
     useEffect(() => {
         const getFood = async()=>{
-            await axios.get('https://team63chickfila.onrender.com/food').then((result)=>{
+            await axios.get('http://localhost:6969/food').then((result)=>{
                 console.log("It gets all of the columns")
                 console.log("This is the result: ", result)
                 setFoods(result.data)
@@ -49,7 +77,7 @@ const FoodUpdate = () =>{
       // use Axios to update the food table
     const update=async(theFoodId,theFoodItem,thePrice,theSupplies,theimage)=>{
         console.log("This is the data that is in my function: ",theFoodId,theFoodItem,thePrice,theSupplies,theimage)
-        await axios.post('https://team63chickfila.onrender.com/updatefood',{
+        await axios.post('http://localhost:6969/updatefood',{
             foodId: theFoodId,
             foodItem: theFoodItem,
             price: thePrice,
@@ -68,7 +96,7 @@ const FoodUpdate = () =>{
     // Add food to table
     const addLeFood=async(counter,theFoodItem,thePrice,theSupplies,theimage)=>{
         console.log("This is data that is getting passed in: ",counter,theFoodItem,thePrice,theSupplies,theimage)
-        await axios.post('https://team63chickfila.onrender.com/insertfood',{
+        await axios.post('http://localhost:6969/insertfood',{
             foodId: counter,
             foodItem: theFoodItem,
             price:thePrice,
@@ -114,28 +142,28 @@ const FoodUpdate = () =>{
         //getFood();
         return(
             
-            <><table>
-                {/* <thread> */}
-                  <tr>
-                    <th>Food ID</th>
-                    <th>Food Item</th>
-                    <th>Price</th>
-                    <th>Supplies</th>
-                    <th>Food Image</th>
-                  </tr>
-                {/* </thread> */}
-                <tbody>
+            &lt;>&lt;table>
+                {/* &lt;thread> */}
+                  &lt;tr>
+                    &lt;th>Food ID&lt;/th>
+                    &lt;th>Food Item&lt;/th>
+                    &lt;th>Price&lt;/th>
+                    &lt;th>Supplies&lt;/th>
+                    &lt;th>Food Image&lt;/th>
+                  &lt;/tr>
+                {/* &lt;/thread> */}
+                &lt;tbody>
                   {foods.map((item) => (
-                    <tr>
-                      <td>{item.foodid}</td>
-                      <td>{item.fooditem}</td>
-                      <td>{item.price}</td>
-                      <td>{item.supplies}</td>
-                      <td>{item.foodimg}</td>
-                    </tr>
+                    &lt;tr>
+                      &lt;td>{item.foodid}&lt;/td>
+                      &lt;td>{item.fooditem}&lt;/td>
+                      &lt;td>{item.price}&lt;/td>
+                      &lt;td>{item.supplies}&lt;/td>
+                      &lt;td>{item.foodimg}&lt;/td>
+                    &lt;/tr>
                   ))}
-                </tbody>
-              </table></>
+                &lt;/tbody>
+              &lt;/table>&lt;/>
         )
     }
     // Update food table
@@ -150,29 +178,52 @@ const FoodUpdate = () =>{
     }
     // Return HTML code of food update webpage
     return(
-        <><body>
+        &lt;>&lt;body>
            
-            <h1 class="intro">Update Menu</h1>
-            {/* <ul>
-                <button><Link to="/manager">Ordering System</Link></button>
-                <button><Link to="/manager/salesreport">Sales Report</Link></button>
-            </ul> */}
+            &lt;h1 class="intro">Update Menu&lt;/h1>
+            {/* &lt;ul>
+                &lt;button>&lt;Link to="/manager">Ordering System&lt;/Link>&lt;/button>
+                &lt;button>&lt;Link to="/manager/salesreport">Sales Report&lt;/Link>&lt;/button>
+            &lt;/ul> */}
 
             {displayTable()}
-            <label>Food ID:</label>
-            <input onChange={change1} value={theFoodId}></input>
-            <label>Food Item:</label>
-            <input onChange={change2} value={theFoodItem}></input>
-            <label>Price:</label>
-            <input onChange={change3} value={thePrice}></input>
-            <label>Supply:</label>
-            <input onChange={change4} value={theSupplies}></input>
-            <label>image:</label>
-            <input onChange={change5} value={theimage}></input>
-            <button onClick={()=>now()}>Submit Change</button>
-            <button onClick={()=>plusFood()}>Add Food!</button>
-        </body><h1>Howdy guys</h1></>
+            &lt;label>Food ID:&lt;/label>
+            &lt;input onChange={change1} value={theFoodId}>&lt;/input>
+            &lt;label>Food Item:&lt;/label>
+            &lt;input onChange={change2} value={theFoodItem}>&lt;/input>
+            &lt;label>Price:&lt;/label>
+            &lt;input onChange={change3} value={thePrice}>&lt;/input>
+            &lt;label>Supply:&lt;/label>
+            &lt;input onChange={change4} value={theSupplies}>&lt;/input>
+            &lt;label>image:&lt;/label>
+            &lt;input onChange={change5} value={theimage}>&lt;/input>
+            &lt;button onClick={()=>now()}>Submit Change&lt;/button>
+            &lt;button onClick={()=>plusFood()}>Add Food!&lt;/button>
+        &lt;/body>&lt;h1>Howdy guys&lt;/h1>&lt;/>
     )
 }
 
 export default FoodUpdate
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Customer">Customer</a></li><li><a href="global.html#ExcessReport">ExcessReport</a></li><li><a href="global.html#FoodUpdate">FoodUpdate</a></li><li><a href="global.html#Manager">Manager</a></li><li><a href="global.html#Receipt">Receipt</a></li><li><a href="global.html#Salesreport">Salesreport</a></li><li><a href="global.html#Server">Server</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Dec 06 2022 22:58:16 GMT-0600 (Central Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
